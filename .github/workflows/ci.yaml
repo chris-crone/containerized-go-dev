@@ -1,0 +1,21 @@
+name: Continuous Integration
+
+on: [push]
+
+jobs:
+    ci:
+        name: CI
+        runs-on: ubuntu-latest
+        env:
+            DOCKER_BUILDKIT: "1"
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v2
+          - name: Run linter
+            run: make lint
+          - name: Run unit tests
+            run: make unit-test
+          - name: Build Linux binary
+            run: make PLATFORM=linux/amd64
+          - name: Build Windows binary
+            run: make PLATFORM=windows/amd64
