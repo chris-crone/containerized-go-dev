@@ -96,7 +96,7 @@ language of your choice.
 
 ### CI
 
-The CI is configured in the [ci.yaml file](./github/workflows/ci.yaml). By
+The CI is configured in the [ci.yaml file](./.github/workflows/ci.yaml). By
 containerizing the toolchain, the CI relies on the toolchain we defined in the
 Dockerfile and doesn't require any custom setup.
 
