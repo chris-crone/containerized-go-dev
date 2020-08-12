@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1-experimental
 
-FROM --platform=${BUILDPLATFORM} golang:1.14.3-alpine AS base
+FROM --platform=${BUILDPLATFORM} golang:1.15.0-alpine AS base
 WORKDIR /src
 ENV CGO_ENABLED=0
 COPY go.* .
@@ -16,7 +16,7 @@ RUN --mount=target=. \
 FROM base AS unit-test
 RUN --mount=target=. \
     --mount=type=cache,target=/root/.cache/go-build \
-    go test -v .
+    mkdir /out && go test -v -coverprofile=/out/cover.out ./...
 
 FROM golangci/golangci-lint:v1.27-alpine AS lint-base
 
@@ -26,6 +26,9 @@ RUN --mount=target=. \
     --mount=type=cache,target=/root/.cache/go-build \
     --mount=type=cache,target=/root/.cache/golangci-lint \
     golangci-lint run --timeout 10m0s ./...
+
+FROM scratch AS unit-test-coverage
+COPY --from=unit-test /out/cover.out /cover.out
 
 FROM scratch AS bin-unix
 COPY --from=build /out/example /

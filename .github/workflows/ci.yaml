@@ -15,6 +15,8 @@ jobs:
             run: make lint
           - name: Run unit tests
             run: make unit-test
+          - name: Get unit test coverage
+            run: make unit-test-coverage
           - name: Build Linux binary
             run: make PLATFORM=linux/amd64
           - name: Build Windows binary
