@@ -1,8 +1,8 @@
 module github.com/chris-crone/containerized-go
 
-go 1.14
+go 1.15
 
 require (
 	github.com/pkg/errors v0.9.1
-	github.com/stretchr/testify v1.5.1
+	github.com/stretchr/testify v1.6.1
 )
