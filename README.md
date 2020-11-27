@@ -100,6 +100,11 @@ The CI is configured in the [ci.yaml file](./.github/workflows/ci.yaml). By
 containerizing the toolchain, the CI relies on the toolchain we defined in the
 Dockerfile and doesn't require any custom setup.
 
+## Related Blog
+
+* [https://www.docker.com/blog/containerize-your-go-developer-environment-part-1/](https://www.docker.com/blog/containerize-your-go-developer-environment-part-1/)
+* [Containerize Your Go Developer Environment – Part 2](https://www.docker.com/blog/containerize-your-go-developer-environment-part-2/)
+
 ## Read more
 
 * [Docker build reference documentation](https://docs.docker.com/engine/reference/commandline/build/)
