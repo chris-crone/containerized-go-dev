@@ -102,9 +102,7 @@ Dockerfile and doesn't require any custom setup.
 
 ## Related Blog
 
-* [https://www.docker.com/blog/containerize-your-go-developer-environment-part-1/](https://www.docker.com/blog/containerize-your-go-developer-environment-part-1/)
-* [Containerize Your Go Developer Environment – Part 2](https://www.docker.com/blog/containerize-your-go-developer-environment-part-2/)
-
+[Containerize your local Go developer environment series](https://www.docker.com/blog/tag/go-env-series/)
 ## Read more
 
 * [Docker build reference documentation](https://docs.docker.com/engine/reference/commandline/build/)
